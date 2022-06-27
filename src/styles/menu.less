@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  min-width: 1150px;
+  overflow: hidden;
+  background-color: #fff;
+  .left {
+    width: 200px;
+    height: 100vh;
+    padding-top: 20px;
+    border: 1px solid #f1f2f4;
+    .menu {
+      .menu-list {
+        position: relative;
+        color: #636d7e;
+
+        .menu-title {
+          display: flex;
+          width: 177px;
+          margin-top: 1px;
+          margin-left: 12px;
+          padding-right: 18px;
+          padding-left: 24px;
+          line-height: 40px;
+          border-radius: 12px;
+          cursor: pointer;
+        }
+        
+        .menu-name {
+          margin-left: 10px;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .menu-children {
+          .children-list {
+            display: flex;
+            width: 177px;
+            margin-left: 12px;
+            padding-left: 50px;
+            line-height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            &:hover {
+              background-color: #fafafc;
+            }
+            .menu-name {
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+        .icon {
+          width: 14px;
+          font-size: 14px;
+        }
+        .more :deep(.ant-dropdown-trigger) {
+          height: 20px;
+          padding: 0 8px;
+          line-height: 20px;
+          background-color: transparent;
+          border: 0;
+          box-shadow: none;
+          transform: rotate(90deg);
+        }
+        .more {
+          display: inherit;
+          margin-left: 32px;
+          padding-top: 11px;
+        }
+        .more :deep(.ant-dropdown-button .ant-btn:first-child) {
+          display: none;
+        }
+        &::after {
+          position: absolute;
+          display: inline-block;
+          width: 70%;
+          height: 1px;
+          margin-left: 30px;
+          background-color: #f1f2f4;
+          content: '';
+        }
+        &.no-open {
+          .menu-title {
+            &:hover {
+              background-color: #fafafc;
+            }
+          }
+          .menu-children {
+            .children-list {
+              &:hover {
+                background-color: #fafafc;
+              }
+            }
+          }
+        }
+        .active {
+          color: #1890ef;
+          background-color: #eef9fe;
+          .more :deep(.ant-dropdown-trigger) {
+            color: #1890ef;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    padding: 18px 24px 0 18px;
+  }
+}

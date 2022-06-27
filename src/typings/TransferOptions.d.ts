@@ -1,0 +1,3 @@
+type TransferOptions = {
+  transferState: TransferState;
+};

@@ -1,0 +1,123 @@
+.global-upload {
+  height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 0.3s;
+  .list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 16px;
+    line-height: 72px;
+    border-bottom: 1px solid #f2f6fd;
+
+    .file-name {
+      display: flex;
+      flex: 1;
+      align-items: center;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    .info {
+      flex: 1;
+      padding-left: 18px;
+      line-height: 1;
+      .name {
+        max-width: 330px;
+        overflow: hidden;
+        color: #03081a;
+        font-size: 14px;
+        line-height: 17px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .size {
+        position: relative;
+        display: inline-block;
+        padding-top: 6px;
+        color: #878c9c;
+        font-size: 12px;
+      }
+    }
+    .oper {
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+
+      .oper-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
+        overflow: hidden;
+        background-color: #eef9fe;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+        & :deep(svg) {
+          color: #06a7ff;
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.is-show {
+  display: none;
+}
+
+.upload-modal {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  width: 500px;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px 7px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ddd;
+    .title-lt {
+      span {
+        color: #909399;
+      }
+    }
+    .title-oper {
+      span {
+        margin-left: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.is-hide {
+  &.upload-modal {
+    .global-upload {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}
